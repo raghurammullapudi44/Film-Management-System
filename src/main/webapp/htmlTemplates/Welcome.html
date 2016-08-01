@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Film Management System</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="login.css">
+		
+		<script type="text/javascript" src="../script/angular.min.js"></script>
+		<script type="text/javascript" src="../script/angular-route.min.js">></script>
+		
+		<script type="text/javascript" src="../script/appConfig.js"></script>
+		<script type="text/javascript" src="../script/appCtrl.js"></script>
+		
+	</head>
+
+	<body ng-app="myApplication">
+		<img src='../static/bg.png' width="1280" height="222"/>
+		
+		<div ng-controller="myCtrl">
+  			<a href="#/AddNewFilm" class="addfilm_buttton button1" ng-click="action.addFilm()" ng-hide="action.buttonClicked.addFilm || action.buttonClicked.modifyFilm || action.buttonClicked.searchFilm || action.buttonClicked.removeFilm  || action.buttonClicked.getAllFilms || action.buttonClicked.addActor || action.buttonClicked.modifyActor || action.buttonClicked.searchActor || action.buttonClicked.removeActor  || action.buttonClicked.getAllActors">Add film</a>
+  		
+  			<a href="#/ModifyFilm" class="modifyfilm_buttton button1" ng-click="action.modifyFilm()" ng-hide="action.buttonClicked.addFilm || action.buttonClicked.modifyFilm || action.buttonClicked.searchFilm || action.buttonClicked.removeFilm  || action.buttonClicked.getAllFilms || action.buttonClicked.addActor || action.buttonClicked.modifyActor || action.buttonClicked.searchActor || action.buttonClicked.removeActor  || action.buttonClicked.getAllActors">Modify  Film</a>
+  		
+  			<a href="#/ModifyFilm" class="searchfilm_buttton button1" ng-click="action.searchFilm()" ng-hide="action.buttonClicked.addFilm || action.buttonClicked.modifyFilm || action.buttonClicked.searchFilm || action.buttonClicked.removeFilm  || action.buttonClicked.getAllFilms || action.buttonClicked.addActor || action.buttonClicked.modifyActor || action.buttonClicked.searchActor || action.buttonClicked.removeActor  || action.buttonClicked.getAllActors">Search Film</a>
+  		
+  			<a href="#/ModifyFilm" class="removefilm_buttton button1" ng-click="action.removeFilm()" ng-hide="action.buttonClicked.addFilm || action.buttonClicked.modifyFilm || action.buttonClicked.searchFilm || action.buttonClicked.removeFilm  || action.buttonClicked.getAllFilms || action.buttonClicked.addActor || action.buttonClicked.modifyActor || action.buttonClicked.searchActor || action.buttonClicked.removeActor  || action.buttonClicked.getAllActors">Remove Film</a>
+  		
+  			<a href="ViewAllFilms.html" class="viewallfilms_buttton button1" ng-click="action.getAllFilms()" ng-hide="action.buttonClicked.addFilm || action.buttonClicked.modifyFilm || action.buttonClicked.searchFilm || action.buttonClicked.removeFilm  || action.buttonClicked.getAllFilms || action.buttonClicked.addActor || action.buttonClicked.modifyActor || action.buttonClicked.searchActor || action.buttonClicked.removeActor  || action.buttonClicked.getAllActors">View All Films</a>
+  		
+  			<a href="#/AddNewActor" class="addactor_buttton button1" ng-click="action.addActor()" ng-hide="action.buttonClicked.addFilm || action.buttonClicked.modifyFilm || action.buttonClicked.searchFilm || action.buttonClicked.removeFilm  || action.buttonClicked.getAllFilms || action.buttonClicked.addActor || action.buttonClicked.modifyActor || action.buttonClicked.searchActor || action.buttonClicked.removeActor  || action.buttonClicked.getAllActors">Add Actor</a>
+  		
+  			<a href="#/ModifyActor" class="modifyactor_buttton button1" ng-click="action.modifyActor()" ng-hide="action.buttonClicked.addFilm || action.buttonClicked.modifyFilm || action.buttonClicked.searchFilm || action.buttonClicked.removeFilm  || action.buttonClicked.getAllFilms || action.buttonClicked.addActor || action.buttonClicked.modifyActor || action.buttonClicked.searchActor || action.buttonClicked.removeActor  || action.buttonClicked.getAllActors">Modify Actor</a>
+  		
+  			<a href="#/SearchActor" class="searchactor_buttton button1" ng-click="action.searchActor()" ng-hide="action.buttonClicked.addFilm || action.buttonClicked.modifyFilm || action.buttonClicked.searchFilm || action.buttonClicked.removeFilm  || action.buttonClicked.getAllFilms || action.buttonClicked.addActor || action.buttonClicked.modifyActor || action.buttonClicked.searchActor || action.buttonClicked.removeActor  || action.buttonClicked.getAllActors">Search Actor</a>
+  		
+  			<a href="#/RemoveActor" class="removeactor_buttton button1" ng-click="action.removeActor()" ng-hide="action.buttonClicked.addFilm || action.buttonClicked.modifyFilm || action.buttonClicked.searchFilm || action.buttonClicked.removeFilm  || action.buttonClicked.getAllFilms || action.buttonClicked.addActor || action.buttonClicked.modifyActor || action.buttonClicked.searchActor || action.buttonClicked.removeActor  || action.buttonClicked.getAllActors">Remove Actor</a>
+
+  			<a href="ViewAllActors.html" class="viewallactors_buttton button1" onclick="return submitMyForm();" ng-click="action.getAllActors()" ng-hide="action.buttonClicked.addFilm || action.buttonClicked.modifyFilm || action.buttonClicked.searchFilm || action.buttonClicked.removeFilm  || action.buttonClicked.getAllFilms || action.buttonClicked.addActor || action.buttonClicked.modifyActor || action.buttonClicked.searchActor || action.buttonClicked.removeActor  || action.buttonClicked.getAllActors">View All Actors</a>
+  			
+  			<a href="#/" class="show_buttton button1"  ng-click="showButtons()" ng-show="action.buttonClicked.addFilm || action.buttonClicked.modifyFilm || action.buttonClicked.searchFilm || action.buttonClicked.removeFilm  || action.buttonClicked.getAllFilms || action.buttonClicked.addActor || action.buttonClicked.modifyActor || action.buttonClicked.searchActor || action.buttonClicked.removeActor  || action.buttonClicked.getAllActors">Home</a>
+  		
+  		<div ng-view></div>
+			
+		</div>
+	</body>
+</html>

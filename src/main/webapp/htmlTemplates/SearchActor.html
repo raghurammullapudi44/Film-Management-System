@@ -1,0 +1,40 @@
+<div id="login">
+
+		<h2><span class="fontawesome"></span>Search an Existing Actor</h2>
+
+		<form action="../SearchActor" method="post">
+
+			<fieldset>
+
+				<p><label for="actorId">Enter Actor Id</label></p>
+				<p><input type="text" name="actorId" />
+
+				<p><input type="submit" value="Submit"></p>
+
+			</fieldset>
+
+		</form>
+		
+		<div ng-controller="eachActor">
+				<h1 align="center">Actors Details</h1>
+	<table style="width: 100%">
+	<div align="center">
+	<h3 align="center">Search the Actors:
+		<input ng-model="filtertxt" />
+	</div>
+		<tr>
+			<th>Actor Id</th>
+			<th>Actor First Name</th>
+			<th>Actor Last Name</th>
+		</tr>
+		
+		<tr ng-repeat="act in actor | filter:filtertxt">
+			<td>{{act.actorId}}</td>
+			<td>{{act.firstName}}</td>
+			<td>{{act.lastName}}</td>
+		</tr>
+		
+	</table>	
+		</div>
+
+	</div>

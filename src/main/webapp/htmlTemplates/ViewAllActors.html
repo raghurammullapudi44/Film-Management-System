@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>All Actors</title>
+		<link rel="stylesheet" href="style.css">
+		<script type="text/javascript" src="../script/angular.min.js"></script>
+		<script type="text/javascript" src="../script/angular-route.min.js">></script>
+		
+		<script type="text/javascript" src="../script/appConfig.js"></script>
+		<script type="text/javascript" src="../script/appCtrl.js"></script>
+<style>
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+tr{
+border-top: 1px solid ;
+border-bottom: 1px solid ;
+}
+td {
+border-left: 1px solid ;
+border-right: 1px solid ;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+</style>
+</head>
+<body ng-app="myApplication">
+<img src='../static/bg.png' width="1280" height="222"/>
+<a href="Welcome.html" class="show_buttton button1">Home</a>
+<div ng-controller="allActors">
+	<h1 align="center">Actors Details</h1>
+	<table style="width: 100%">
+	<div align="center">
+	<h3 align="center">Search the Actors:
+		<input ng-model="filtertxt" />
+	</div>
+		<tr>
+			<th>Actor Id</th>
+			<th>Actor First Name</th>
+			<th>Actor Last Name</th>
+		</tr>
+		
+		<tr ng-repeat="actor in actors | filter:filtertxt">
+			<td>{{actor.actorId}}</td>
+			<td>{{actor.firstName}}</td>
+			<td>{{actor.lastName}}</td>
+		</tr>
+		
+	</table>	
+</div>
+
+</body>
+</html>
