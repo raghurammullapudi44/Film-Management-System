@@ -4,7 +4,9 @@ import java.text.ParseException;
 import java.util.List;
 import java.util.Map;
 
+import com.flp.fms.domain.Category;
 import com.flp.fms.domain.Film;
+import com.flp.fms.domain.Language;
 import com.flp.fms.exceptions.DuplicateRecordFoundException;
 import com.flp.fms.exceptions.FieldEmptyException;
 import com.flp.fms.exceptions.NegativeInputException;
@@ -18,4 +20,6 @@ public interface IFilmService
 	boolean RemoveFilm(Map removeParameters) throws FieldEmptyException, NegativeInputException, RecordDoesNotExistsException;
 	List<Film> SearchFilm(Map searchParameters) throws FieldEmptyException, NegativeInputException, RecordDoesNotExistsException;
 	List<Film> getAllFilm();
+	List<Language> getAllLanguages();
+	List<Category> getAllCategories();
 }

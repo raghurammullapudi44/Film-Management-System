@@ -124,4 +124,14 @@ public class FilmDaoImplForDB implements IFilmDao
 		}
 		return null;
 	}
+	
+	public List<Language> getAllLanguages() {
+		TypedQuery<Language> query = em.createQuery("Select l from Language l",Language.class);
+		return query.getResultList();
+	}
+	
+	public List<Category> getAllCategories() {
+		TypedQuery<Category> query = em.createQuery("Select c from Category c",Category.class);
+		return query.getResultList();
+	}
 }

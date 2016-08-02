@@ -16,4 +16,6 @@ public interface IFilmDao
 	List<Film> getAllFilm();
 	Language findLanguageByName(String language_name);
 	Category findCategoryByName(String category_name);
+	List<Language> getAllLanguages();
+	List<Category> getAllCategories();
 }

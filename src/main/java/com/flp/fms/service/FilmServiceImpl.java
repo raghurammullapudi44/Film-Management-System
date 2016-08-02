@@ -6,6 +6,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import javax.persistence.TypedQuery;
+
 import com.flp.fms.dao.ActorDaoImplForDB;
 import com.flp.fms.dao.FilmDaoImplForDB;
 import com.flp.fms.dao.IActorDao;
@@ -154,5 +156,13 @@ public class FilmServiceImpl implements IFilmService
 	public List<Film> getAllFilm() 
 	{
 		return filmDao.getAllFilm();
+	}
+	
+	public List<Language> getAllLanguages() {
+		return filmDao.getAllLanguages();
+	}
+	
+	public List<Category> getAllCategories() {
+		return filmDao.getAllCategories();
 	}
 }

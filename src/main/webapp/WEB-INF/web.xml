@@ -55,6 +55,34 @@
   	<servlet-name>ViewActor</servlet-name>
   	<servlet-class>com.flp.fms.controller.ViewActor</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>RemoveFilm</display-name>
+  	<servlet-name>RemoveFilm</servlet-name>
+  	<servlet-class>com.flp.fms.controller.RemoveFilm</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ViewAllLanguages</display-name>
+  	<servlet-name>ViewAllLanguages</servlet-name>
+  	<servlet-class>com.flp.fms.controller.ViewAllLanguages</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ViewAllCategories</display-name>
+  	<servlet-name>ViewAllCategories</servlet-name>
+  	<servlet-class>com.flp.fms.controller.ViewAllCategories</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>AddNewFilm</display-name>
+  	<servlet-name>AddNewFilm</servlet-name>
+  	<servlet-class>com.flp.fms.controller.AddNewFilm</servlet-class>
+  </servlet>
 
   <servlet-mapping>
   	<servlet-name>ViewAllActors</servlet-name>
@@ -87,5 +115,21 @@
   <servlet-mapping>
   	<servlet-name>ViewActor</servlet-name>
   	<url-pattern>/ViewActor</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RemoveFilm</servlet-name>
+  	<url-pattern>/RemoveFilm</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ViewAllLanguages</servlet-name>
+  	<url-pattern>/ViewAllLanguages</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ViewAllCategories</servlet-name>
+  	<url-pattern>/ViewAllCategories</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AddNewFilm</servlet-name>
+  	<url-pattern>/AddNewFilm</url-pattern>
   </servlet-mapping>
 </web-app>

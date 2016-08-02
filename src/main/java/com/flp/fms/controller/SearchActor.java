@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.flp.fms.domain.Actor;
+import com.flp.fms.exceptions.RecordDoesNotExistsException;
 import com.flp.fms.service.ActorServiceImpl;
 import com.flp.fms.service.IActorService;
 import com.google.gson.Gson;
@@ -35,10 +36,14 @@ public class SearchActor extends HttpServlet {
 				GsonBuilder gsonBuilder = new GsonBuilder();
 				Gson gson = gsonBuilder.registerTypeAdapter(Actor.class, new ActorAdapter()).create();
 				
-				String myJsonEmpObj=gson.toJson(actor);
+				String myJsonObj=gson.toJson(actor);
 					
-				out.println(myJsonEmpObj);
+				out.println(myJsonObj);
 			}
+		}
+		catch (RecordDoesNotExistsException e) 
+		{
+			response.sendRedirect(request.getContextPath() +"/htmlTemplates/RecordDoesNotExistsException.html");
 		}
 		catch (Exception e) 
 		{

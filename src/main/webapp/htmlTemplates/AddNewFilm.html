@@ -1,35 +1,62 @@
-<div id="login">
+<div id="login" ng-controller="addNewFilm">
 
 		<h2><span class="fontawesome"></span>Add New Film</h2>
 
-		<form action="FilmDetails" method="post">
+		<form name="addFilmForm" ng-submit="sendPost()">
 
 			<fieldset>
 
 				<p><label for="title">Film Title</label></p>
-				<p><input type="text" name="title" value="enter title" onBlur="if(this.value=='')this.value='enter title'" onFocus="if(this.value=='enter title')this.value=''"></p> <!-- JS because of IE support; better: placeholder="mail@address.com" -->
-
+				<p><input type="text" name="title" ng-model="title" ng-required="true"/>
+				<span ng-show="addFilmForm.title.$touched && addFilmForm.title.$invalid">
+					<span ng-show="addFilmForm.title.$error.required">*Please enter the title</span>
+				</span>
+	
 				<p><label for="description">Description</label></p>
-				<p><input type="text" name="description" value="enter description" onBlur="if(this.value=='')this.value='enter description'" onFocus="if(this.value=='enter description')this.value=''"></p> <!-- JS because of IE support; better: placeholder="password" -->
+				<p><input type="text" name="description" ng-model="description" ng-required="true"/>
 				
 				<p><label for="releaseDate">Release Date</label></p>
-				<p><input type="date" name="releaseDate" value="enter release date" onBlur="if(this.value=='')this.value='enter release date'" onFocus="if(this.value=='enter release date')this.value=''"></p> <!-- JS because of IE support; better: placeholder="password" -->
+				<p><input type="date" name="releaseDate" ng-model="releaseDate" ng-required="true"/>
 				
 				<p><label for="rentalDuration">Rental Duration</label></p>
-				<p><input type="text" name="rentalDuration" value="enter rental duration" onBlur="if(this.value=='')this.value='enter rental duration'" onFocus="if(this.value=='enter rental duration')this.value=''"></p> <!-- JS because of IE support; better: placeholder="password" -->
+				<p><input type="text" name="rentalDuration" ng-model="rentalDuration" ng-required="true"/>
 				
 				<p><label for="rentalRate">Rental Rate</label></p>
-				<p><input type="text" name="rentalRate" value="enter rental rate" onBlur="if(this.value=='')this.value='enter rental rate'" onFocus="if(this.value=='enter rental rate')this.value=''"></p> <!-- JS because of IE support; better: placeholder="password" -->
+				<p><input type="text" name="rentalRate" ng-model="rentalRate" ng-required="true"/>
 				
 				<p><label for="length">Length</label></p>
-				<p><input type="text" name="length" value="enter length" onBlur="if(this.value=='')this.value='enter length'" onFocus="if(this.value=='enter length')this.value=''"></p> <!-- JS because of IE support; better: placeholder="password" -->
+				<p><input type="text" name="length" ng-model="length" ng-required="true"/>
+				
+				
+				<p><label for="rating">rating</label></p>
+				<p><input type="text" name="rating" ng-model="rating" ng-required="true"/>
 				
 				<p><label for="replacementCost">Replacement Cost</label></p>
-				<p><input type="text" name="replacementCost" value="enter replacement cost" onBlur="if(this.value=='')this.value='enter replacement cost'" onFocus="if(this.value=='enter replacement cost')this.value=''"></p> <!-- JS because of IE support; better: placeholder="password" -->
+				<p><input type="text" name="replacementCost" ng-model="replacementCost" ng-required="true"/>
 				
-				<p><label for="description">Description</label></p>
-				<p><input type="text" name="description" value="enter description" onBlur="if(this.value=='')this.value='enter description'" onFocus="if(this.value=='enter description')this.value=''"></p> <!-- JS because of IE support; better: placeholder="password" -->
+				<p><label for="choose Language">Choose Language:</label></p>
+		 		<div ng-controller="allLanguages">
+		 		<select  ng-model="languageName" ng-options="lang.languageName for lang in languages" ng-required="true">
+		 		<option value="">--Select Language--</option>
+		 		</select>
+		 		</div>
 				
+				<p><label for="choose Category">Choose Category:</label></p>
+		 		<div ng-controller="allCategories">
+		 		<select  ng-model="categoryName" ng-options="catg.categoryName for catg in categories" ng-required="true">
+		 		<option value="">--Select Category--</option>
+		 		</select>
+		 		</div>
+		 		
+				<p><label for="choose Actor">Choose Actor:</label></p>
+		 		<div ng-controller="allActors">
+		 		<select ng-model="filmActors"  multiple ng-options="actor.firstName for actor in actors" ng-required="true">
+		 		<option value="">--Select Actors--</option>
+		 		</select>
+		 		</div>
+		 		
+		 		<p><label for="special Features">special Features</label></p>
+				<p><input type="text" name="specialFeatures" ng-model="specialFeatures" ng-required="true"/>
 				<p><input type="submit" value="Submit"></p>
 
 			</fieldset>

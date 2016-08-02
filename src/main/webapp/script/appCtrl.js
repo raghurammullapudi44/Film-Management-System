@@ -20,20 +20,57 @@ app.controller('allFilms',function($scope,$http){
 	
 	});
 
-
-app.controller('eachActor',function($scope,$http){
+app.controller('allLanguages',function($scope,$http){
 	
-	var url='http://localhost:8018/angularjs_webapp/SearchActor';
+	var url='http://localhost:8018/angularjs_webapp/ViewAllLanguages';
 	
-	$http.post(url)
+	$http.get(url)
 		.success(function(response){
-			$scope.actor=response;
-		})
-		.error(function(response){
-			$scope.message="drhdertj";
-			$scope.actor=response;
+			$scope.languages=response;
 		});
+	});
+
+app.controller('allCategories',function($scope,$http){
 	
+	var url='http://localhost:8018/angularjs_webapp/ViewAllCategories';
+	
+	$http.get(url)
+		.success(function(response){
+			$scope.categories=response;
+		});
+	});
+
+
+app.controller('addNewFilm',function($scope,$http){
+	
+$http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded; charset=utf-8";
+	
+	$scope.sendPost = function() {
+		$http({
+			url : 'http://localhost:8018/angularjs_webapp/AddNewFilm',
+			method : "POST",
+			data : {
+				'title' : $scope.title,
+				'description':$scope.description,
+				'rating' : $scope.rating,
+				'rentalduration':$scope.rentalduration,
+				'rentalRate' : $scope.rentalRate,
+				'replacementCost':$scope.description,
+				'specialFeatures':$scope.specialFeatures,
+				'releaseDate' : $scope.releaseDate,
+				'languageName':$scope.languageName,
+				'categoryName' : $scope.categoryName,
+				'actors': $scope.filmActors
+			}
+		}).then(function(response) {
+			alert($scope.languageName)
+			$scope.message = response.data;
+		}, function(response) {
+			//fail case
+			console.log(response);
+			$scope.message = response;
+		});
+	};
 	});
 
 app.controller('statusMsg',function($scope,$http){

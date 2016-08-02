@@ -154,10 +154,9 @@ public class UserInteraction
 				default:System.out.println("Invalid Search choice");
 						break;
 			}	
-			System.out.println("Film Modification status is "+filmService.ModifyFilm(modificationDetails,existingFilm));
+			if(choice <= 9)
+				System.out.println("Film Modification status is "+filmService.ModifyFilm(modificationDetails,existingFilm));
 		}
-		
-		
 	}
 	
 	public void RemoveFilm() throws ParseException, FieldEmptyException, NegativeInputException, RecordDoesNotExistsException
@@ -227,7 +226,8 @@ public class UserInteraction
 				default:System.out.println("Invalid Search choice");
 						break;
 			}
-			System.out.println("Film Details are "+filmService.SearchFilm(searchParameters));
+			if(choice <= 9)
+				System.out.println("Film Details are "+filmService.SearchFilm(searchParameters));
 		}
 	}
 	

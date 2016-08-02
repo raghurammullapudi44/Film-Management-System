@@ -2,7 +2,7 @@
 
 		<h2><span class="fontawesome"></span>Remove Film</h2>
 
-		<form action="../ModifyFilm" method="post">
+		<form action="../RemoveFilm" method="post">
 
 			<fieldset>
 
@@ -20,19 +20,5 @@
 			</fieldset>
 
 		</form>
-		
-		 Choose Your field to modify:
-		 <input type="radio" ng-model="update" value="description">Male
-		 <input type="radio" ng-model="update" value="rentalCost"> Female
-		 
-		 <div ng-switch="update">
-		 	<div ng-switch-when="Male">
-		 		<h1>description Selected!</h1>
-		 	</div>
-		 	<div ng-switch-when="Female">
-		 		<h1>rental rate Selected!</h1>
-		 	</div>
-		 
-		 </div>
 
 	</div>

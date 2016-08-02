@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.flp.fms.exceptions.DuplicateRecordFoundException;
+import com.flp.fms.exceptions.RecordDoesNotExistsException;
 import com.flp.fms.service.ActorServiceImpl;
 import com.flp.fms.service.IActorService;
 
@@ -32,6 +34,10 @@ public class AddNewActor extends HttpServlet {
 			{
 				response.sendRedirect(request.getContextPath() +"/htmlTemplates/statusMsg.html");
 			}
+		}
+		catch (DuplicateRecordFoundException e) 
+		{
+			response.sendRedirect(request.getContextPath() +"/htmlTemplates/DuplicateRecordFoundException.html");
 		}
 		catch (Exception e) 
 		{

@@ -6,6 +6,10 @@ app.config(function($routeProvider) {
 	  .when('/AddNewFilm', {
 	    templateUrl : 'AddNewFilm.html',
 	  })
+	  
+	  .when('/RemoveFilm', {
+	    templateUrl : 'RemoveFilm.html',
+	  })
 
 	  .when('/ModifyFilm', {
 	    templateUrl : 'ModifyFilm.html',
