@@ -5,10 +5,12 @@ import java.util.List;
 import java.util.Map;
 
 import javax.persistence.EntityManager;
+import javax.persistence.RollbackException;
 import javax.persistence.TypedQuery;
 
 import com.flp.fms.domain.Actor;
 import com.flp.fms.entitymanager.EntityManagerCreator;
+import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 
 
 public class ActorDaoImplForDB implements IActorDao{

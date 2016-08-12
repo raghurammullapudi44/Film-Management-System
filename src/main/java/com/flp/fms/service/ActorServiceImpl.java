@@ -33,7 +33,7 @@ public class ActorServiceImpl implements IActorService
 		actor.setFirstName((String) actorDetails.get("firstName"));
 		actor.setLastName((String) actorDetails.get("lastName"));
 		
-		if(actorDao.getAllActor().contains(actor))
+		if((actorDao.getAllActor() != null) && (actorDao.getAllActor().contains(actor)))
 		{
 			throw new DuplicateRecordFoundException();
 		}

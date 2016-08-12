@@ -80,9 +80,9 @@ public class UserInteraction
 		{
 			Map<String, String> actorDetails=new HashMap<String, String>();
 			System.out.println("Enter the actor first name");
-			actorDetails.put("firstName",sc.next());
+			actorDetails.put("firstName",sc.nextLine());
 			System.out.println("Enter the actor last name");
-			actorDetails.put("lastName",sc.next());
+			actorDetails.put("lastName",sc.nextLine());
 			actors.add(actorDetails);
 		}
 		

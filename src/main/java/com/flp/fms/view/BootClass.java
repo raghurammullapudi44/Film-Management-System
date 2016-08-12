@@ -12,20 +12,19 @@ import com.flp.fms.exceptions.RecordDoesNotExistsException;
 public class BootClass 
 {
 	static BootClass bc=new BootClass();
-	static Scanner sc=new Scanner(System.in);
 
 	UserInteraction ui=new UserInteraction();
 	
 	public static void main(String args[]) throws ParseException
 	{	
+		Scanner sc=new Scanner(System.in);
 		while(true)
 		{
 			System.out.println("Menu");
 			System.out.println("-------------");
-			System.out.println("1.AddFilm"+"\n"+"2.ModifyFilm"+"\n"+"3.RemoveFilm"+"\n"+"4.SearchFilm"+"\n"+"5.getAllFilm"+"\n"+"6.AddActor"+"\n"+"7.ModifyActor"+"\n"+"8.RemoveActor"+"\n"+"9.SearchActor"+"\n"+"10.getAllActor"+"\n"+"11.Exit"+"\n");
+			System.out.println("1.AddFilm"+"\n"+"2.ModifyFilm"+"\n"+"3.RemoveFilm"+"\n"+"4.SearchFilm"+"\n"+"5.getAllFilm"+"\n"+"6.AddActor"+"\n"+"7.ModifyActor"+"\n"+"8.RemoveActor"+"\n"+"9.SearchActor"+"\n"+"10.getAllActor"+"\n"+"11.Exit");
 			System.out.println("Enter your Choice");
-			int choice = sc.nextInt();
-			
+			int choice = Integer.parseInt(sc.nextLine());
 			bc.menuSelection(choice);
 		}
 	}

@@ -33,7 +33,7 @@ public class Film implements Serializable
     @Column(name="description",nullable=false)
 	private String description;
     
-    @Column(name="release_year",nullable=false,columnDefinition = "DATETIME(3)")
+    @Column(name="release_year",nullable=false)
 	@Temporal(TemporalType.DATE)
     private Date releaseYear;
 	

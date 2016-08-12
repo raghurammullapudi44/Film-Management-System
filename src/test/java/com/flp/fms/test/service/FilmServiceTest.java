@@ -226,7 +226,7 @@ public class FilmServiceTest {
 		Mockito.when(filmDao.AddFilm(film)).thenReturn(true);
 		Mockito.when(actorDao.getAllActor()).thenReturn(actors);
 		Mockito.when(filmDao.getAllFilm()).thenReturn(allFilms);
-		filmService.AddFilm(newFilmDetails);
+		assertEquals(true,filmService.AddFilm(newFilmDetails));
 	}
 	
 	@Test(expected=com.flp.fms.exceptions.FieldEmptyException.class)
